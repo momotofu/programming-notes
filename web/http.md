@@ -1,6 +1,6 @@
 # HTTP
 
-## URI
+### URI
 `scheme:[//[user[:password]@]host[:port]][/path][?query][#fragment]`
 
 Here is an example of a URI: https://en.wikipedia.org/wiki/Fish
