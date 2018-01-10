@@ -1,6 +1,6 @@
-#HTTP
+# HTTP
 
-##URI
+## URI
 `scheme:[//[user[:password]@]host[:port]][/path][?query][#fragment]`
 
 Here is an example of a URI: https://en.wikipedia.org/wiki/Fish
@@ -19,7 +19,7 @@ https://www.google.com/search?q=fish
 
 `?q=fish` is a query
 
-###Hostnames
+### Hostnames
 
 Why is it called a hostname? In network terminology, a host is a computer on the network; one that could host services
 
