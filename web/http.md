@@ -98,6 +98,6 @@ The headers end with a blank line. Everything after that blank line is part of t
 But in the case of an error, the response body is where the error message goes! If you request a page that doesn't exist, and you get a 404 Not Found error, the actual error message shows up in the response body.
 
 ### Playing with servers
-`ncat -l 9999`: create a server in your terminal 
-`ncat [hostname][port]`: connect as a client in another terminal 
-`python3 -m http.server 8000`: create a server using python3 
+- `ncat -l 9999`: create a server in your terminal 
+- `ncat [hostname][port]`: connect as a client in another terminal 
+- `python3 -m http.server 8000`: create a server using python3 
