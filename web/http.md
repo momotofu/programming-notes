@@ -79,5 +79,25 @@ The numbers 200 and 301 here are HTTP status codes. There are dozens of differen
 - 4xx — Client error. The server didn't understand the client's request, or can't or won't fill it. Different codes tell the client whether it was a bad URI, a permissions problem, or another sort of error.
 - 5xx — Server error. Something went wrong on the server side.
 
+https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+
 **Headers**
+Each header is a line that starts with a keyword, such as Location or Content-type, followed by a colon and a value.
+Headers are a sort of metadata for the response.
+
+- Content-type: indicates the kind of data that the server is sending. It includes a general category of content as well as the specific format.
+- Content-Length: tells the client how long (in bytes) the response body will be.
+
+**Cookies**
+a web feature that lets servers store data on the browser, for instance to keep a user logged in. To set a cookie, the server sends the Set-Cookie header. The browser will then send the cookie data back in a Cookie header on subsequent requests.
+
 **Body**
+The headers end with a blank line. Everything after that blank line is part of the response body. If the request was successful (a 200 OK status, for instance), this is a copy of whatever resource the client asked for — such as a web page, image, or other piece of data.
+
+But in the case of an error, the response body is where the error message goes! If you request a page that doesn't exist, and you get a 404 Not Found error, the actual error message shows up in the response body.
+
+### Playing with servers
+`ncat -l 9999`: create a server in your terminal 
+`ncat [hostname][port]`: connect as a client in another terminal 
+`python3 -m http.server 8000`: create a server using python3 
