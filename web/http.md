@@ -47,3 +47,37 @@ IP addresses come in two different varieties: the older IPv4 and the newer IPv6.
 
 ### Localhost
 The IPv4 address 127.0.0.1 and the IPv6 address ::1 are special addresses that mean "this computer itself" — for when a client (like your browser) is accessing a server on your own computer.
+
+### Ports
+HTTP URIs imply a port number of 80
+HTTPS URIs imply a port number of 443
+We say that a server "listens on" a port, such as 80 or 8000. "Listening" means that when the server starts up, it tells its operating system that it wants to receive connections from clients on a particular port number. When a client (such as a web browser) "connects to" that port and sends a request, the operating system knows to forward that request to the server that's listening on that port.
+
+### Packets
+Each packet has the IP addresses of the computer that sent it, and the computer that receives it. 
+And (with the exception of some low-level packets, such as ping) it also has the port number for the sender and recipient.
+IP addresses distinguish computers; port numbers distinguish programs on those computers.
+
+## HTTP Requests and Responses
+An exchange between a server and a client
+
+### Request
+HTTP verbs
+GET
+
+### Response
+The HTTP response is made up of three parts: the status line, some headers, and a response body.
+
+Status line: The status line tells the client whether the server understood the request, whether the server has the resource the client asked for, and how to proceed next. It also tells the client which dialect of HTTP the server is speaking.
+
+Status codes from status line i.e. `HTTP/1.0 200 OK`.
+The numbers 200 and 301 here are HTTP status codes. There are dozens of different status codes. The first digit of the status code indicates the general success of the request. As a shorthand, web developers describe all of the codes starting with 2 as "2xx" codes, for instance — the x's mean "any digit".
+
+1xx — Informational. The request is in progress or there's another step to take.
+2xx — Success! The request succeeded. The server is sending the data the client asked for.
+3xx — Redirection. The server is telling the client a different URI it should redirect to. The headers will usually contain a Location header with the updated URI. Different codes tell the client whether a redirect is permanent or temporary.
+4xx — Client error. The server didn't understand the client's request, or can't or won't fill it. Different codes tell the client whether it was a bad URI, a permissions problem, or another sort of error.
+5xx — Server error. Something went wrong on the server side.
+
+Headers
+Body
