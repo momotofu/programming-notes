@@ -1,4 +1,5 @@
 # HTTP
+"One approach that I like to use when designing a new piece of code is to imagine that it already exists, and think through the ways that a user would use it. Coming up with these narratives is a useful tool to plan out what the code will need to do."
 
 ### URI
 `scheme:[//[user[:password]@]host[:port]][/path][?query][#fragment]`
@@ -63,7 +64,9 @@ An exchange between a server and a client
 
 ### Request
 HTTP verbs
-GET
+- GET: methods are good for search forms and other actions that are intended to look something up or ask the server for a copy of some resource.
+- POST: alter or create a resource - not idempotent.
+(Idempotent: An action is idempotent if doing it twice (or more) produces the same result as doing it once.)
 
 ### Response
 The HTTP response is made up of three parts: the status line, some headers, and a response body.
@@ -84,7 +87,7 @@ https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
 
 **Headers**
 Each header is a line that starts with a keyword, such as Location or Content-type, followed by a colon and a value.
-Headers are a sort of metadata for the response.
+Headers are a sort of metadata for the response. (case insensitive)
 
 - Content-type: indicates the kind of data that the server is sending. It includes a general category of content as well as the specific format.
 - Content-Length: tells the client how long (in bytes) the response body will be.
