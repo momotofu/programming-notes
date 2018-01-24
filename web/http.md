@@ -18,6 +18,8 @@ https://en.wikipedia.org/wiki/Oxygen#Discovery
 https://www.google.com/search?q=fish
 
 `?q=fish` is a query
+quoting and unquoting is a way to encode and decode special
+characters in urls.
 
 ### Hostnames
 
@@ -47,3 +49,4 @@ IP addresses come in two different varieties: the older IPv4 and the newer IPv6.
 
 ### Localhost
 The IPv4 address 127.0.0.1 and the IPv6 address ::1 are special addresses that mean "this computer itself" — for when a client (like your browser) is accessing a server on your own computer.
+
