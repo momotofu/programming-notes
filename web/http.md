@@ -1,4 +1,5 @@
 # HTTP
+"One approach that I like to use when designing a new piece of code is to imagine that it already exists, and think through the ways that a user would use it. Coming up with these narratives is a useful tool to plan out what the code will need to do."
 
 ### URI
 `scheme:[//[user[:password]@]host[:port]][/path][?query][#fragment]`
@@ -50,3 +51,58 @@ IP addresses come in two different varieties: the older IPv4 and the newer IPv6.
 ### Localhost
 The IPv4 address 127.0.0.1 and the IPv6 address ::1 are special addresses that mean "this computer itself" — for when a client (like your browser) is accessing a server on your own computer.
 
+### Ports
+HTTP URIs imply a port number of 80
+HTTPS URIs imply a port number of 443
+We say that a server "listens on" a port, such as 80 or 8000. "Listening" means that when the server starts up, it tells its operating system that it wants to receive connections from clients on a particular port number. When a client (such as a web browser) "connects to" that port and sends a request, the operating system knows to forward that request to the server that's listening on that port.
+
+### Packets
+Each packet has the IP addresses of the computer that sent it, and the computer that receives it.
+And (with the exception of some low-level packets, such as ping) it also has the port number for the sender and recipient.
+IP addresses distinguish computers; port numbers distinguish programs on those computers.
+
+## HTTP Requests and Responses
+An exchange between a server and a client
+
+### Request
+HTTP verbs
+- GET: methods are good for search forms and other actions that are intended to look something up or ask the server for a copy of some resource.
+- POST: alter or create a resource - not idempotent.
+(Idempotent: An action is idempotent if doing it twice (or more) produces the same result as doing it once.)
+
+### Response
+The HTTP response is made up of three parts: the status line, some headers, and a response body.
+
+**Status line:** The status line tells the client whether the server understood the request, whether the server has the resource the client asked for, and how to proceed next. It also tells the client which dialect of HTTP the server is speaking.
+
+**Status codes** from status line i.e. `HTTP/1.0 200 OK`.
+The numbers 200 and 301 here are HTTP status codes. There are dozens of different status codes. The first digit of the status code indicates the general success of the request. As a shorthand, web developers describe all of the codes starting with 2 as "2xx" codes, for instance — the x's mean "any digit".
+
+- 1xx — Informational. The request is in progress or there's another step to take.
+- 2xx — Success! The request succeeded. The server is sending the data the client asked for.
+- 3xx — Redirection. The server is telling the client a different URI it should redirect to. The headers will usually contain a Location header with the updated URI. Different codes tell the client whether a redirect is permanent or temporary.
+- 4xx — Client error. The server didn't understand the client's request, or can't or won't fill it. Different codes tell the client whether it was a bad URI, a permissions problem, or another sort of error.
+- 5xx — Server error. Something went wrong on the server side.
+
+https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+
+**Headers**
+Each header is a line that starts with a keyword, such as Location or Content-type, followed by a colon and a value.
+Headers are a sort of metadata for the response. (case insensitive)
+
+- Content-type: indicates the kind of data that the server is sending. It includes a general category of content as well as the specific format.
+- Content-Length: tells the client how long (in bytes) the response body will be.
+
+**Cookies**
+a web feature that lets servers store data on the browser, for instance to keep a user logged in. To set a cookie, the server sends the Set-Cookie header. The browser will then send the cookie data back in a Cookie header on subsequent requests.
+
+**Body**
+The headers end with a blank line. Everything after that blank line is part of the response body. If the request was successful (a 200 OK status, for instance), this is a copy of whatever resource the client asked for — such as a web page, image, or other piece of data.
+
+But in the case of an error, the response body is where the error message goes! If you request a page that doesn't exist, and you get a 404 Not Found error, the actual error message shows up in the response body.
+
+### Playing with servers
+- `ncat -l 9999`: create a server in your terminal
+- `ncat [hostname][port]`: connect as a client in another terminal
+- `python3 -m http.server 8000`: create a server using python3
