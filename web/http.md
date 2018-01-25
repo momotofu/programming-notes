@@ -73,6 +73,11 @@ HTTP verbs
 - PATCH: A relatively new addition to HTTP. It expresses the idea of patching a resource, or changing it in some well-defined way. (If you've used Git, you can think of patching as what applying a Git commit does to the files in a repository.)
 - DELETE: The destructive counterpart to PUT is DELETE, for removing a resource from the server. After a DELETE has happened successfully, further GET requests for that resource will yield 404 Not Found ... unless, of course, a new resource is later created with the same name!
 
+### Debugging requests
+- HEAD: works just like GET, except the server doesn't return any content — just headers.
+- OPTIONS: can be used to find out what features the server supports.
+- TRACE: echoes back what the server received from the client — but is often disabled for security reasons.
+
 ### Response
 The HTTP response is made up of three parts: the status line, some headers, and a response body.
 
