@@ -1,9 +1,11 @@
 ### Kinds of attacks
-- https://www.owasp.org/index.php/SQL_Injection
+- SQL Injection: https://www.owasp.org/index.php/SQL_Injection
+  This becomes a risk when using string interpolation or formating in an SQL query.
+  i.e.
   ```
     '); delete from posts; --
   ```
-- https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)
+- Cross-site Scripting: https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)
   ```
   <script>
   setTimeout(function() {
