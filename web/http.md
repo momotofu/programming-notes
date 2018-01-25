@@ -65,6 +65,7 @@ IP addresses distinguish computers; port numbers distinguish programs on those c
 An exchange between a server and a client
 
 ### Request
+https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html
 HTTP verbs
 - GET: methods are good for search forms and other actions that are intended to look something up or ask the server for a copy of some resource.
 - POST: alter or create a resource - not idempotent.
