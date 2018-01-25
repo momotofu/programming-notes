@@ -15,5 +15,8 @@
   </script>
   ```
   
-  ### TSL
-  https://en.wikipedia.org/wiki/Transport_Layer_Security
+### TSL in HTTPS
+https://en.wikipedia.org/wiki/Transport_Layer_Security
+- It keeps the connection private by encrypting everything sent over it. Only the server and browser should be able to read what's being sent.
+- It lets the browser authenticate the server. For instance, when a user accesses https://www.udacity.com/, they can be sure that the response they're seeing is really from Udacity's servers and not from an impostor.
+- It helps protect the integrity of the data sent over that connection — checking that it has not been (accidentally or deliberately) modified or replaced.
