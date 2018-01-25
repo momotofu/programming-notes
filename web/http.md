@@ -69,6 +69,9 @@ HTTP verbs
 - GET: methods are good for search forms and other actions that are intended to look something up or ask the server for a copy of some resource.
 - POST: alter or create a resource - not idempotent.
 (Idempotent: An action is idempotent if doing it twice (or more) produces the same result as doing it once.)
+- PUT: Used for creating a new resources. The client sends the URI path that it wants to create, and a piece of data in the request bodyA server should respond to a PUT request with a 201 Created status code, if successful. After a successful PUT, a GET request to the same URI should return the newly created resource.
+- PATCH: A relatively new addition to HTTP. It expresses the idea of patching a resource, or changing it in some well-defined way. (If you've used Git, you can think of patching as what applying a Git commit does to the files in a repository.)
+- DELETE: The destructive counterpart to PUT is DELETE, for removing a resource from the server. After a DELETE has happened successfully, further GET requests for that resource will yield 404 Not Found ... unless, of course, a new resource is later created with the same name!
 
 ### Response
 The HTTP response is made up of three parts: the status line, some headers, and a response body.
