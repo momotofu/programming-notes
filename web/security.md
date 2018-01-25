@@ -1,7 +1,6 @@
 ### Kinds of attacks
 - SQL Injection: https://www.owasp.org/index.php/SQL_Injection
   This becomes a risk when using string interpolation or formating in an SQL query.
-  i.e.
   ```
     '); delete from posts; --
   ```
