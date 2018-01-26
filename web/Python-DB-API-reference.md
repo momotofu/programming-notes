@@ -88,4 +88,5 @@ And all of these would be false:
 - fish like '%b%'
 - fish like 'b%'
 - fish like ''
+
 The term "spam" referring to junk posts comes from [Monty Python's "Spam" sketch](https://www.youtube.com/watch?v=anwy2MPT5RE). On the Internet, "spamming" was first used to mean [repetitious junk messages](http://www.templetons.com/brad/spamterm.html) intended to disrupt a group chat. Later, it came to refer to unsolicited ads on forums or email; and more recently to more-or-less any repetitious or uninvited junk message.
