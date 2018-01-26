@@ -1,40 +1,41 @@
-Reference — Python DB-API
+## Reference — Python DB-API
+https://docs.python.org/3/library/sqlite3.html
 This is a reference for the material covered in the "Python DB-API" lesson.
 
 Python DB-API Quick Reference
-For a full reference to the Python DB-API, see the specification and the documentation for specific database modules, such as sqlite3 and psycopg2.
+For a full reference to the Python DB-API, [see the specification](https://www.python.org/dev/peps/pep-0249/) and the documentation for specific database modules, such as [sqlite3](https://docs.python.org/2/library/sqlite3.html) and [psycopg2](http://initd.org/psycopg/docs/).
 
-module.connect(...)
-Connect to a database. The arguments to connect differ from module to module; see the documentation for details. connect returns a Connection object or raises an exception.
+**module.connect(...)**
+Connect to a database. The arguments to **connect** differ from module to module; see the documentation for details. **connect** returns a **Connection** object or raises an exception.
 
 For the methods below, note that you don't literally call (for instance) Connection.cursor() in your code. You make a Connection object, save it in a variable (maybe called db) and then call db.cursor().
 
-Connection.cursor()
+**Connection.cursor()**
 Makes a Cursor object from a connection. Cursors are used to send SQL statements to the database and fetch results.
 
-Connection.commit()
+**Connection.commit()**
 Commits changes made in the current connection. You must call commit before closing the connection if you want changes (such as inserts, updates, or deletes) to be saved. Uncommitted changes will be visible from your currect connection, but not from others.
 
-Connection.rollback()
+**Connection.rollback()**
 Rolls back (undoes) changes made in the current connection. You must roll back if you get an exception if you want to continue using the same connection.
 
-Connection.close()
+**Connection.close()**
 Closes the connection. Connections are always implicitly closed when your program exits, but it's a good idea to close them manually especially if your code might run in a loop.
 
-Cursor.execute(statement)
-Cursor.execute(statement, tuple)
-Execute an SQL statement on the database. If you want to substitute variables into the SQL statement, use the second form — see the documentation for details.
+**Cursor.execute(statement)**
+**Cursor.execute(statement, tuple)**
+Execute an SQL statement on the database. If you want to substitute variables into the SQL statement, use the second form — see the [documentation](http://initd.org/psycopg/docs/usage.html#query-parameters) for details.
 
 If your statement doesn't make sense (like if it asks for a column that isn't there), or if it asks the database to do something it can't do (like delete a row of a table that is referenced by other tables' rows) you will get an exception.
 
-Cursor.fetchall()
+**Cursor.fetchall()**
 Fetch all the results from the current statement.
 
-Cursor.fetchone()
+**Cursor.fetchone()**
 Fetch just one result. Returns a tuple, or None if there are no results.
 
-psql Quick Reference
-The psql command-line tool is really powerful. There's a complete reference to it in the PostgreSQL documentation.
+## psql Quick Reference
+The psql command-line tool is really powerful. There's a complete reference to it in the [PostgreSQL documentation](http://www.postgresql.org/docs/9.4/static/app-psql.html).
 
 To connect psql to a database running on the same machine (such as your VM), all you need to give it is the database name. For instance, the command psql forum will connect to the forum database.
 
