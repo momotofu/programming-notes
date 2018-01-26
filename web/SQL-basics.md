@@ -26,21 +26,21 @@ The type timestamp with time zone can be abbreviated to timestamptz in PostgreSQ
 ### Select statement
 The most basic form of the select statement is to select a single scalar value:
 
-select 2 + 2 ;
+```select 2 + 2;```
 More usefully, we can select one or more columns from a table. With no restrictions, this will return all rows in the table:
 
-select name, species from animals ;
+```select name, species from animals;```
 Columns are separated by commas; use * to select all columns from the tables:
 
-select * from animals;
+```select * from animals;```
 Quite often, we don't want all the data from a table. We can restrict the rows using a variety of select clauses, listed below. There are also a wide variety of functions that can apply to columns; including aggregation functions that operate on values from several rows, such as max and count.
 
 ### where
 The where clause expresses restrictions — filtering a table for rows that follow a particular rule. where supports equalities, inequalities, and boolean operators (among other things):
 
-where species = 'gorilla' — return only rows that have 'gorilla' as the value of the species column.
-where name >= 'George' — return only rows where the name column is alphabetically after 'George'.
-where species != 'gorilla' and name != 'George' — return only rows where species isn't 'gorilla' and name isn't 'George'.
+```where species = 'gorilla'``` — return only rows that have 'gorilla' as the value of the species column.
+```where name >= 'George'``` — return only rows where the name column is alphabetically after 'George'.
+```where species != 'gorilla'``` and name != 'George' — return only rows where species isn't 'gorilla' and name isn't 'George'.
 
 ### limit / offset
 The limit clause sets a limit on how many rows to return in the result table. The optional offset clause says how far to skip ahead into the results. So limit 10 offset 100 will return 10 results starting with the 101st.
