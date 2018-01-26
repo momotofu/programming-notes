@@ -76,17 +76,17 @@ If you use both where and having, the where condition will filter the rows that 
 
 You can read more about having here: http://www.postgresql.org/docs/9.4/static/sql-select.html#SQL-HAVING
 
-All the tables in the zoo database
+## All the tables in the zoo database
 A database of zoo animals is used as an example in many of the code exercises in this course. Here's a list of all the tables available in it, and what the columns in each table refer to —
 
-animals
+#### animals
 This table lists individual animals in the zoo. Each animal has only one row. There may be multiple animals with the same name, or even multiple animals with the same name and species.
 
 name — the animal's name (example: 'George')
 species — the animal's species (example: 'gorilla')
 birthdate — the animal's date of birth (example: '1998-05-18')
 
-diet
+#### diet
 This table matches up species with the foods they eat. Every species in the zoo eats at least one sort of food, and many eat more than one.
 
 species — the name of a species (example: 'hyena')
@@ -94,7 +94,7 @@ food — the name of a food that species eats (example: 'meat')
 
 The diet table shows an example of the important database concept of normalization. If a species eats more than one food, there will be more than one row for that species. We do this instead of having multiple food columns (or storing a list in a single column), both of which would make select statements impractical.
 
-taxonomy
+#### taxonomy
 This table gives the (partial) biological taxonomic names for each species in the zoo. It can be used to find which species are more closely related to each other evolutionarily.
 
 name — the common name of the species (e.g. 'jackal')
@@ -107,13 +107,13 @@ If you've never heard of this classification, don't worry about it; the details 
 
 The t_order column is not called order because "order" is a reserved keyword in SQL.
 
-ordernames
+#### ordernames
 This table gives the common names for each of the taxonomic orders in the taxonomy table.
 
 t_order — the taxonomic order name (e.g. 'Cetacea')
 name — the common name (e.g. 'whales and dolphins')
 
-Insert statement
+## Insert statement
 The basic syntax for the insert statement:
 
 ```insert into tablename ( col1, col2, ... ) values ( val1, val2, ... );```
