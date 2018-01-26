@@ -1,6 +1,12 @@
 #Reference — Elements of SQL
 This is a reference for the material covered in the "Elements of SQL" lesson.
 
+### PSQL CLI
+```
+psql forum
+update posts set content = 'cheese' where content ~ 'spam';
+```
+
 ### SQL Data Types
 Here's just a sampling of the many data types that SQL supports. We won't be using most of these types in this course, though. The exact list of types differs from one database to another. For a full list of types, check the manual for your database, such as this one for PostgreSQL.
 
