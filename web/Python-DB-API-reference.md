@@ -51,18 +51,20 @@ Some other things you can do:
 
 \H — switch between printing tables in plain text vs. HTML.
 
-Bleach documentation
+## Bleach documentation
 Read the documentation for Bleach here: http://bleach.readthedocs.org/en/latest/
 
-Update and delete statements
+## Update and delete statements
 The syntax of the update and delete statements:
 
-update table set column = value where restriction ;
-delete from table where restriction ;
+```
+update table set column = value where restriction;
+delete from table where restriction;
+```
 
 The where restriction in both statements works the same as in select and supports the same set of operators on column values. In both cases, if you leave off the where restriction, the update or deletion will apply to all rows in the table, which is usually not what you want.
 
-like operator
+## like operator
 The like operator supports a simple form of text pattern-matching. Whatever is on the left side of the operator (usually the name of a text column) will be matched against the pattern on the right. The pattern is an SQL text string (so it's in 'single quotes') and can use the % sign to match any sub-string, including the empty string.
 
 If you are familiar with regular expressions, think of the % in like patterns as being like the regex .* (dot star).
@@ -71,19 +73,19 @@ If you are more familiar with filename patterns in the Unix shell or Windows com
 
 For instance, for a table row where the column fish has the value 'salmon', all of these restrictions would be true:
 
-fish like 'salmon'
-fish like 'salmon%'
-fish like 'sal%'
-fish like '%n'
-fish like 's%n'
-fish like '%al%'
-fish like '%'
-fish like '%%%'
+- fish like 'salmon'
+- fish like 'salmon%'
+- fish like 'sal%'
+- fish like '%n'
+- fish like 's%n'
+- fish like '%al%'
+- fish like '%'
+- fish like '%%%'
 And all of these would be false:
 
-fish like 'carp'
-fish like 'salmonella'
-fish like '%b%'
-fish like 'b%'
-fish like ''
-The term "spam" referring to junk posts comes from Monty Python's "Spam" sketch. On the Internet, "spamming" was first used to mean repetitious junk messages intended to disrupt a group chat. Later, it came to refer to unsolicited ads on forums or email; and more recently to more-or-less any repetitious or uninvited junk message.
+- fish like 'carp'
+- fish like 'salmonella'
+- fish like '%b%'
+- fish like 'b%'
+- fish like ''
+The term "spam" referring to junk posts comes from [Monty Python's "Spam" sketch](https://www.youtube.com/watch?v=anwy2MPT5RE). On the Internet, "spamming" was first used to mean [repetitious junk messages](http://www.templetons.com/brad/spamterm.html) intended to disrupt a group chat. Later, it came to refer to unsolicited ads on forums or email; and more recently to more-or-less any repetitious or uninvited junk message.
