@@ -131,3 +131,15 @@ For instance, if a table has three columns (a, b, c) and you want to insert into
 
 Normally, a single insert statement can only insert into a single table. (Contrast this with the select statement, which can pull data from several tables using a join.)
 
+## Examples
+Table Students
+Column: ID, Name, Marks
+
+Table Grades
+column: Grade, Min_mark, Max_mark
+```
+select (case g.grade >= 8 when true then s.name else null end), g.grade, s.marks
+from students s, grades g
+where s.marks between min_mark and max_mark
+order by g.grade desc, s.name, s.marks;
+```
