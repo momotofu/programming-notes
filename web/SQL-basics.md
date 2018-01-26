@@ -5,6 +5,7 @@ This is a reference for the material covered in the "Elements of SQL" lesson.
 ```
 psql forum
 update posts set content = 'cheese' where content ~ 'spam';
+delete from posts where content ~ 'cheese';
 ```
 
 ### SQL Data Types
