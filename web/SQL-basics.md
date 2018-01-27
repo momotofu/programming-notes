@@ -104,11 +104,11 @@ The diet table shows an example of the important database concept of normalizati
 #### taxonomy
 This table gives the (partial) biological taxonomic names for each species in the zoo. It can be used to find which species are more closely related to each other evolutionarily.
 
-name — the common name of the species (e.g. 'jackal')
-species — the taxonomic species name (e.g. 'aureus')
-genus — the taxonomic genus name (e.g. 'Canis')
-family — the taxonomic family name (e.g. 'Canidae')
-t_order — the taxonomic order name (e.g. 'Carnivora')
+- name — the common name of the species (e.g. 'jackal')
+- species — the taxonomic species name (e.g. 'aureus')
+- genus — the taxonomic genus name (e.g. 'Canis')
+- family — the taxonomic family name (e.g. 'Canidae')
+- t_order — the taxonomic order name (e.g. 'Carnivora')
 
 If you've never heard of this classification, don't worry about it; the details won't be necessary for this course. But if you're curious, the Wikipedia article Taxonomy (biology)) may help.
 
