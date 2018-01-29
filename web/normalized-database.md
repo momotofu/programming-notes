@@ -1,6 +1,6 @@
 ### Vocabulary
 Primary Key: a column or columns that uniquely identify what each row is about
-Foreign Key AKA a reference constrant: column or columns in one table that uniquily identifies a rows in another table. It's possible for a table to have two or more foriegn keys.
+Foreign Key AKA a reference constrant: column or columns in one table that uniquily identifies a rows in another table. It's possible for a table to have two or more foriegn keys. A foreign key will usually point to a primary key of another table.
 
 i.e.
 ```
