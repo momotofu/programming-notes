@@ -167,6 +167,34 @@ def lightweights(cursor):
     return cursor.fetchall()
 ```
 
+## Views
+A view is a select query stored in the database in a way that lets you use it like a table.
+`create view [viewname] as select`
+
+```
+create view topfive as select species, count(*) as num 
+  from animals
+  group by species
+  order by num desc
+  limit 5;
+```
+
+```
+select * from topfive;
+```
+will produce
+```
++-----------+-----+
+|   species | num |
++===========+=====+
+|   gorilla |   9 |
+|     llama |   9 |
+| orangutan |   6 |
+|    alpaca |   5 |
+|    ferret |   5 |
++-----------+-----+
+```
+
 ## Examples
 Table Students
 Column: ID, Name, Marks
