@@ -1,3 +1,23 @@
+### Vocabulary
+Primary Key: a column or columns that uniquely identify what each row is about
+Foreign Key AKA a reference constrant: column or columns in one table that uniquily identifies a rows in another table. It's possible for a table to have two or more foriegn keys.
+
+i.e.
+```
+create table students (
+  id serial primary key,
+  name text);
+
+create table courses (
+  id text primary key,
+  name text);
+  
+create table grades (
+  student integer references students(id),
+  course text references sourses(id),
+  grade text);
+```
+
 ### Constraints
 1. Every row has the same number of columns
 2. There is a unique **key** in each row, and every column in that row says something about the key. In any row the key provides the topic of the sentence that the rest of the row says something about.
