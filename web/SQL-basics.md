@@ -131,6 +131,31 @@ For instance, if a table has three columns (a, b, c) and you want to insert into
 
 Normally, a single insert statement can only insert into a single table. (Contrast this with the select statement, which can pull data from several tables using a join.)
 
+## Left and Right Joins
+Doesn't include rows with a zero value
+```
+select programs.name, count(*) as num
+       from programs join bugs
+         on programs.filename = bugs.filename
+       group by programs.name
+       order by num;
+```
+Includes rows from the left table that have a zero value from the right table
+```
+select programs.name, count(bugs.filename) as num
+       from programs left join bugs
+         on programs.filename = bugs.filename
+       group by programs.name
+       order by num;
+```
+## Subqueries
+```
+select avg(big_score)
+from (select max(score) as big_score
+    from mooseball
+    group by team) as maxes;
+```
+
 ## Examples
 Table Students
 Column: ID, Name, Marks
