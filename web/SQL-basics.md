@@ -156,6 +156,17 @@ from (select max(score) as big_score
     group by team) as maxes;
 ```
 
+```
+def lightweights(cursor):
+    """Returns a list of the players in the db whose weight is less than the average."""
+    cursor.execute("""
+        select name, weight 
+        from players, (select avg(weight) as av 
+                       from players) as avt 
+        where weight < av;")
+    return cursor.fetchall()
+```
+
 ## Examples
 Table Students
 Column: ID, Name, Marks
