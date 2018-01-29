@@ -148,7 +148,7 @@ select programs.name, count(bugs.filename) as num
        group by programs.name
        order by num;
 ```
-## Subqueries
+## Subqueries AKA subselect
 ```
 select avg(big_score)
 from (select max(score) as big_score
