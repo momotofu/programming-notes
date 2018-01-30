@@ -1,3 +1,5 @@
+# Deeper-SQL-reference
+
 ## The create table statement
 The full syntax of the create table statement is quite complex. See the [PostgreSQL create table documentation](http://www.postgresql.org/docs/9.4/static/sql-createtable.html) for the whole thing. Here's the syntax for the form we're seeing in this lesson:
 
