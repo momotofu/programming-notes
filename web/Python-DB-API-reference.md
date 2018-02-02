@@ -34,7 +34,7 @@ Fetch all the results from the current statement.
 **Cursor.fetchone()**
 Fetch just one result. Returns a tuple, or None if there are no results.
 
-** Example **
+### Example
 Get request
 ```
     db = psycopg2.connect(database=DBNAME)
