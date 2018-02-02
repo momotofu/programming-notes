@@ -34,6 +34,26 @@ Fetch all the results from the current statement.
 **Cursor.fetchone()**
 Fetch just one result. Returns a tuple, or None if there are no results.
 
+** Example **
+Get request
+```
+    db = psycopg2.connect(database=DBNAME)
+    cursor = db.cursor()
+    cursor.execute("select content, time from posts order by time desc")
+    posts = cursor.fetchall()
+    db.close()
+```
+Post request
+```
+    db = psycopg2.connect(database=DBNAME)
+    cursor = db.cursor()
+    clean_content = bleach.clean(content)
+    cursor.execute("insert into posts (content, time) values (%s,%s)",
+            (clean_content, datetime.datetime.now()))
+    db.commit()
+    db.close()
+```
+
 ## psql Quick Reference
 The psql command-line tool is really powerful. There's a complete reference to it in the [PostgreSQL documentation](http://www.postgresql.org/docs/9.4/static/app-psql.html).
 
