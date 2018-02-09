@@ -1,1 +1,1 @@
-Should be updated daily. All my notes in Markdown
+All my notes in Markdown
