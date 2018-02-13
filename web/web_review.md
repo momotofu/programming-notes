@@ -8,5 +8,10 @@ IP: Internet Protocol - addresses to different computers. google.com query goes 
 If client and server on on the same machine, the term Localhost is used (127.0.0.1).
 
 HTTP: Hyper Text Transfer Protocol, communicate between the client and the server using HTTP 9 Verbs.
-- GET
-- POST
+- GET: retrieve data
+- POST: create new data
+
+  status codes: provide information on success or method used during HTTP
+  - 200: success get
+  - 301: success post
+  - 404: file not found
