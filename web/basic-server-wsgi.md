@@ -1,3 +1,4 @@
+```python3
 import psycopg2
 
 def connect():
@@ -33,3 +34,4 @@ def application(environ, start_response='test'):
 
 if __name__ == '__main__':
 	application('test')
+```
